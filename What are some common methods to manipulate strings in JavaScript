@@ -1,0 +1,39 @@
+Concatenation:
+Using the + operator to join strings: const newString = "Hello" + " " + "World";
+Using the concat() method: const newString = "Hello".concat(" ", "World");
+
+Case Conversion:
+toUpperCase(): Converts all characters in a string to uppercase.
+toLowerCase(): Converts all characters in a string to lowercase.
+
+Substring Extraction:
+slice(startIndex, endIndex): Extracts a portion of a string based on start and end indices. Negative indices are supported. 
+substring(startIndex, endIndex): Similar to slice(), but handles negative indices differently (treating them as 0).
+
+let text = "Hello world!";
+let result = text.substring(1, 4); //ell
+
+substr(startIndex, length): Extracts a specified number of characters from a starting index.
+
+let text = "Hello world!";
+let result = text.substr(1, 4); //ello
+
+Searching and Indexing:
+indexOf(substring): Returns the index of the first occurrence of a specified substring. 
+lastIndexOf(substring): Returns the index of the last occurrence of a specified substring. 
+includes(substring): Checks if a string contains a specified substring and returns a boolean.
+startsWith(substring): Checks if a string starts with a specified substring.
+endsWith(substring): Checks if a string ends with a specified substring.
+
+Trimming Whitespace:
+trim(): Removes whitespace from both ends of a string.
+trimStart() (or trimLeft()): Removes whitespace from the beginning of a string.
+trimEnd() (or trimRight()): Removes whitespace from the end of a string.
+
+Splitting and Joining:
+split(separator): Splits a string into an array of substrings based on a specified separator.
+join(separator) (used on arrays): Joins elements of an array into a string using a specified separator.
+
+Replacing Content:
+replace(searchValue, replaceValue): Replaces the first occurrence of a searchValue (string or regex) with replaceValue.
+replaceAll(searchValue, replaceValue): Replaces all occurrences of a searchValue (string or regex) with replaceValue.
