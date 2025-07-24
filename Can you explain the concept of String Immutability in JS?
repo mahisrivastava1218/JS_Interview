@@ -1,0 +1,3 @@
+In JavaScript, string immutability refers to the characteristic that once a string value is created, its content cannot be directly altered or modified. Instead, 
+any operation that appears to "change" a string, such as replace(), toUpperCase(), or concatenation, actually results in the creation of a new string in memory, 
+leaving the original string untouched.
