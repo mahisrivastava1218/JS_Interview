@@ -46,5 +46,13 @@ const foundUsers = users.find(user=>user.age>20);
 console.log(foundUsers);
 
 
+function debugShiftAndPop(arr) {
+
+// shift is used to return first element;
+// pop is used to return last element;
+  let result =  arr.shift();
+  return result;
+}
+
 
 
