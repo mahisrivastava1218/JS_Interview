@@ -1,0 +1,2 @@
+//go from start index to less than 1 end index
+return(str.substring(startInd, endInd));
