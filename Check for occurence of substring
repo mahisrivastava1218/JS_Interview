@@ -1,0 +1,12 @@
+//use indexOf() -> for get first occurence index of substr
+//use lastIndexOf() -> for get second occurence index of substr
+function checkForSubstr(str,substr){
+  let indexing = str.indexOf(substr);
+  console.log(indexing);
+  let secindexing = str.lastIndexOf(substr);
+   console.log(secindexing);
+  if(secindexing ===  indexing){
+    return true;
+  }
+  return false;
+}
