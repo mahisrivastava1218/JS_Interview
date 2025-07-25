@@ -1,0 +1,11 @@
+function checkProperty(obj,propName){
+    // if(obj.hasOwnProperty(propName)){
+    //     // propName is a variable
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+    //  hasProperty will not work as "" because it checks for the string "propName" instead of the value stored in the variable propName
+     return obj.hasOwnProperty(propName);
+     
+}
