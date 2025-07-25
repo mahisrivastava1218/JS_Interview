@@ -54,5 +54,12 @@ function debugShiftAndPop(arr) {
   return result;
 }
 
-
-
+function evenCubeSum(arr) {
+  //  return arr.filter((item,index)=> item%2===0).reduce((acc,curr)=>acc+curr**3,0);
+  //  tc-O(n+k)->O(n) SC-O(k)
+  return arr.reduce((acc,curr)=>{
+    if(curr%2===0) acc +=curr**3;
+    return acc;
+  },0);
+  // TC-O(n) SC-O(1);
+}
