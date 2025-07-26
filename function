@@ -1,0 +1,12 @@
+Functions are first-class objects meaning that they are like any other object and can have the properties like standard objects.
+Functions can be passed into another function and returned from another function.
+
+
+function greet(message) {
+    message();
+}
+function message() {
+    console.log('Hello World');
+}
+
+greet(message)
