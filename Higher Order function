@@ -1,0 +1,66 @@
+🔹 What is a Higher-Order Function?
+A Higher-Order Function (HOF) is a function that:
+
+Takes one or more functions as arguments, OR
+
+Returns a function as its result.
+
+These are core to JavaScript and used in things like map, filter, setTimeout, etc.
+
+✅ Example 1: Passing a function as an argument
+function greet(name) {
+  return `Hello, ${name}`;
+}
+
+function processUserInput(callback) {
+  const name = "Mahi";
+  console.log(callback(name));
+}
+
+processUserInput(greet); // Output: Hello, Mahi
+Here, processUserInput is a higher-order function because it takes greet (a function) as an argument.
+
+✅ Example 2: Returning a function
+function multiplier(factor) {
+  return function(num) {
+    return num * factor;
+  }
+}
+
+const double = multiplier(2);
+console.log(double(5)); // 10
+Here, multiplier is a HOF because it returns a new function.
+
+🔹 Real-World Examples of Higher-Order Functions
+1. map()
+const numbers = [1, 2, 3, 4];
+const squared = numbers.map(num => num * num);
+console.log(squared); // [1, 4, 9, 16]
+map() is a HOF because it takes a callback function as an argument.
+
+2. filter()
+const marks = [80, 45, 90, 33, 70];
+const passed = marks.filter(mark => mark >= 50);
+console.log(passed); // [80, 90, 70]
+3. setTimeout()
+js
+Copy
+Edit
+setTimeout(() => {
+  console.log("This runs after 1 second");
+}, 1000);
+Here, setTimeout is a HOF because it takes a function as an argument and runs it later.
+
+🔁 Bonus: Use with Array Sorting
+const users = [
+  { name: "Alice", age: 28 },
+  { name: "Bob", age: 22 },
+];
+
+users.sort((a, b) => a.age - b.age); // Sort by age ascending
+🔚 Summary
+Concept	Description
+Higher-Order Function	Takes/Returns another function
+Real-world examples	map, filter, setTimeout, sort, etc.
+Benefits	Clean, reusable, modular code
+
