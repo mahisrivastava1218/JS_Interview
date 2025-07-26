@@ -1,0 +1,12 @@
+
+(* let max = Math.max(...arr);
+let min = Math.min(...arr);
+console.log(max,min);
+return max-min;
+tc ,SC-O(n) *)
+
+let max=arr.reduce((a,b)=>Math.max(a,b));
+let min=arr.reduce((a,b)=>Math.min(a,b));
+return max-min;
+
+//tc-O(n) SC-O(1)
