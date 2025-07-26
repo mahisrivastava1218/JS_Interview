@@ -1,0 +1,50 @@
+Absolutely! Here's a clear explanation of the difference between shallow copy and deep copy in JavaScript:
+
+🔹 Shallow Copy
+A shallow copy copies only the top-level properties of an object.
+If a property is an object or array, only the reference is copied—not the actual nested structure.
+
+Example:
+const original = { name: "Mahi", skills: ["JS", "React"] };
+const shallow = { ...original };
+
+shallow.skills.push("Node.js");
+console.log(original.skills); // ["JS", "React", "Node.js"] ❗
+✅ Top-level copied
+❌ Nested objects/arrays are still shared
+
+🔹 Deep Copy
+A deep copy creates a completely independent clone, including all nested objects or arrays.
+
+Example:
+const original = { name: "Mahi", skills: ["JS", "React"] };
+const deep = JSON.parse(JSON.stringify(original));
+
+deep.skills.push("Node.js");
+console.log(original.skills); // ["JS", "React"] ✅
+✅ Everything is copied
+✅ No shared references
+
+⚠️ Note:
+JSON.parse(JSON.stringify(obj)) is a common deep copy method, but:
+
+❌ Fails with functions, undefined, Date, Map, etc.
+
+For complex cases, use libraries like:
+
+Lodash: _.cloneDeep(obj)
+
+In a deep copy, all levels of the object are duplicated — so:
+
+👉 Changes in the deep copy do NOT affect the original object, and vice versa.
+
+const original = { name: "Mahi", info: { age: 25 } };
+
+// Deep copy
+const copy = JSON.parse(JSON.stringify(original));
+
+// Modify deep copy
+copy.info.age = 30;
+
+console.log(original.info.age); // ➝ 25 (✅ unchanged)
+console.log(copy.info.age);     // ➝ 30
