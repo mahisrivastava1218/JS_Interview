@@ -1,0 +1,13 @@
+Enables strict mode.
+
+Catches common mistakes (e.g., undeclared variables).
+
+Prevents usage of reserved keywords.
+
+Makes your code more secure and predictable.
+
+👉 Example:
+
+"use strict";
+x = 10; // ❌ Error: x is not defined
+Without "use strict", it would create a global variable silently — which is risky.
