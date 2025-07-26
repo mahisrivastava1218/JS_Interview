@@ -7,3 +7,11 @@ function updateProperty(obj, propName, str) {
   // return obj.propName; // incorrect Returns the value of the property named "propName"
 
   // dotnotation is ues in update property when we know the vexact value    else use bracket;
+
+
+function deleteProperty(obj, propName) {
+  // You only need to implement this function.
+  //keyword delete obj[propName]
+  delete obj[propName];
+  return obj;
+}
