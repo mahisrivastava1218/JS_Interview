@@ -1,0 +1,57 @@
+✅ What is a Pure Function?
+A pure function is a function that:
+
+Always returns the same output for the same input.
+
+Has no side effects (does not modify external state, variables, files, DOM, etc.).
+
+✅ Example of a Pure Function:
+
+function add(a, b) {
+  return a + b;
+}
+💯 Same inputs → same output
+
+❌ Doesn't modify any external variable
+
+✅ Pure ✅
+
+❌ Example of an Impure Function
+let count = 0;
+
+function increment() {
+  count++;
+  return count;
+}
+❌ Depends on external state (count)
+
+❌ Modifies external variable (count++)
+
+⚠️ Result depends on when/how often you call it
+
+❌ Impure ❌
+
+⚙️ Another Real-World Example
+✅ Pure
+function square(x) {
+  return x * x;
+}
+❌ Impure (logs to console = side effect):
+function square(x) {
+  console.log("Squaring...");
+  return x * x;
+}
+🔁 Why Pure Functions Are Awesome:
+✅ Predictable
+✅ Testable
+✅ Reusable
+✅ Easier to debug
+✅ Ideal for functional programming
+✅ Safer for concurrency and async operations
+
+🧠 TL;DR
+Feature	Pure Function	Impure Function
+Same input → same output	✅ Yes	❌ Not always
+Side effects (DOM, DB, etc.)	❌ Never	✅ Often
+Depends on external state	❌ Never	✅ Yes
+
