@@ -1,0 +1,15 @@
+Array.isArray() is a built-in method used to check if a value is an array.
+
+🔹 Syntax:
+Array.isArray(value)
+📌 Returns: true if the value is an array, otherwise false.
+
+🔹 Example:
+js
+Copy
+Edit
+Array.isArray([1, 2, 3]);     // ✅ true
+Array.isArray("hello");       // ❌ false
+Array.isArray({ key: "value" }); // ❌ false
+Array.isArray(null);          // ❌ false
+Array.isArray(undefined);     // ❌ false
