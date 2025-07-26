@@ -15,3 +15,19 @@ function deleteProperty(obj, propName) {
   delete obj[propName];
   return obj;
 }
+
+
+function getAge(obj) {
+  
+  // return obj["age"];
+  return obj.age;
+  // age is a property not a variable use as a string;
+  // return obj.age;
+  // here we known the value of age can use dot notation
+}
+
+function getFirstItem() {
+  const shoppingCart = {1: "Apple", 2: "Orange"};
+  return shoppingCart[1];
+  // return shoppingCart.1;  //incoreect 1,2 are not valid identifiers
+}
