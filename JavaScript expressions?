@@ -1,0 +1,14 @@
+console.log(typeof NaN);
+console.log(typeof Infinity);
+console.log(1 / -0);
+
+Correct Answer :
+"number", "number", -Infinity
+
+
+Answer Explanation :
+-- typeof NaN returns "number", as NaN (Not a Number) is still considered a number type in JavaScript.
+
+-- typeof Infinity also returns "number", as Infinity is a special numeric value in JavaScript.
+
+-- 1 / -0 evaluates to -Infinity, as dividing by negative zero results in negative infinity in JavaScript.
