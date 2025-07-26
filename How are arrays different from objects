@@ -1,0 +1,36 @@
+🔹 Arrays
+Ordered collection.
+
+Indexed by numbers (0, 1, 2...).
+
+Used when order matters.
+
+Example:
+const arr = ["apple", "banana"];
+console.log(arr[0]); // "apple"
+🔹 Objects
+Unordered collection.
+
+Indexed by keys (strings or symbols).
+
+Used for key-value pairs and structured data.
+
+Example:
+
+const obj = { fruit: "apple", color: "red" };
+console.log(obj["fruit"]); // "apple"
+👉 In short:
+
+Use arrays for lists.
+
+Use objects for data with named properties.
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
