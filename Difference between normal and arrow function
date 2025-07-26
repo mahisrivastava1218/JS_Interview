@@ -1,0 +1,76 @@
+✅ 1. Syntax
+// Normal Function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow Function
+const add = (a, b) => a + b;
+✅ 2. this Binding (Most Important Difference)
+Normal Function: this depends on how the function is called (dynamic).
+
+Arrow Function: this is lexically bound, i.e., it takes this from the surrounding scope.
+
+🔍 Example:
+const person = {
+  name: "Mahi",
+  normalFunc: function () {
+    console.log("Normal:", this.name); // 'this' refers to person
+  },
+  arrowFunc: () => {
+    console.log("Arrow:", this.name); // 'this' refers to outer scope (likely undefined)
+  }
+};
+
+person.normalFunc(); // Normal: Mahi
+person.arrowFunc();  // Arrow: undefined
+✅ 3. arguments Object
+Normal functions have their own arguments object.
+
+Arrow functions do not — they inherit from the parent scope.
+function normal() {
+  console.log(arguments);
+}
+normal(1, 2); // [1, 2]
+
+const arrow = () => {
+  console.log(arguments); // ❌ ReferenceError: arguments is not defined
+};
+arrow(1, 2);
+✅ 4. Constructor Usage
+Normal functions can be used as constructors with new.
+
+Arrow functions cannot be used as constructors.
+function Person(name) {
+  this.name = name;
+}
+const p = new Person("Mahi"); // ✅ Works
+
+const PersonArrow = (name) => {
+  this.name = name;
+};
+// const p2 = new PersonArrow("Mahi"); ❌ Error: PersonArrow is not a constructor
+✅ 5. prototype Property
+Normal functions have a prototype (used for inheritance).
+
+Arrow functions do not.
+
+function fn() {}
+console.log(fn.prototype); // ✅ {}
+
+const arrow = () => {};
+console.log(arrow.prototype); // ❌ undefined
+✅ Summary Table
+Feature	Normal Function	Arrow Function
+this binding	Dynamic (based on call)	Lexical (from parent scope)
+arguments object	Available	Not available
+Can be a constructor	Yes	No
+Has prototype	Yes	No
+Syntax	Verbose	Concise
+
+✅ When to Use Arrow Functions?
+When you want lexical this (e.g., in callbacks inside classes or objects)
+
+For short, simple functions
+
+When you don’t need arguments, new, or this
