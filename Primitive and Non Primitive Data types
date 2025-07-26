@@ -1,0 +1,48 @@
+✅ Primitive Data Types
+➡️ Basic, immutable data. Stored by value.
+
+📦 Examples:
+
+String
+
+Number
+
+Boolean
+
+null
+
+undefined
+
+Symbol
+
+BigInt
+
+📌 Example:
+let a = 5;
+let b = a;
+b = 10;
+console.log(a); // 5 (unchanged)
+
+✅ Non-Primitive Data Types
+➡️ Complex, mutable data. Stored by reference.
+
+📦 Examples:
+
+Object
+
+Array
+
+Function
+
+Date, Map, Set, etc.
+
+📌 Example:
+
+let obj1 = { name: "Mahi" };
+let obj2 = obj1;
+obj2.name = "Amit";
+console.log(obj1.name); // "Amit" (both refer to same object)
+🧠 Quick Difference:
+
+Primitive = stored by value
+Non-Primitive = stored by reference
