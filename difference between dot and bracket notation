@@ -1,0 +1,9 @@
+function updateProperty(obj, propName, str) {
+  // You only need to implement this function.
+  obj[propName] = str;
+  return (obj[propName]);
+
+  //  obj.propName = str;  // Incorrect: propName is treated as a literal property name
+  // return obj.propName; // incorrect Returns the value of the property named "propName"
+
+  // dotnotation is ues in update property when we know the vexact value    else use bracket;
