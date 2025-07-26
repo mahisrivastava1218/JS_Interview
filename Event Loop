@@ -1,0 +1,77 @@
+🔄 What is the Event Loop?
+The event loop is the mechanism that allows JavaScript (which is single-threaded) to:
+
+Perform non-blocking asynchronous operations
+
+Handle timers, callbacks, and Promises
+
+Keep the app responsive while waiting (e.g., for API calls, user input)
+
+🧠 Think of it as the manager that decides what code to run when.
+
+📦 How It Works (Visual Mental Model)
++------------------+       +----------------+      +------------------+
+| Call Stack       | <---> | Event Loop     | ---> | Task Queues      |
+| (Executes code)  |       | (Scheduler)    |      | (Callback, Microtask)|
++------------------+       +----------------+      +------------------+
+🧠 Key Parts:
+Call Stack → Where your synchronous code runs.
+
+Web APIs → setTimeout, fetch, etc. handled here by the browser.
+
+Task Queues:
+
+Macro-task queue → e.g., setTimeout, setInterval
+
+Micro-task queue → e.g., .then(), await, queueMicrotask
+
+🔁 Event Loop Process:
+Runs synchronous code on the Call Stack
+
+When it hits an async task (e.g., setTimeout), it’s sent to the Web API
+
+Once complete, it goes to the appropriate Queue (micro or macro)
+
+When the stack is empty, the Event Loop pulls from the Microtask Queue first, then the Macrotask Queue
+
+Runs the next task → and repeats 🔁
+
+🔍 Example:
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise");
+});
+
+console.log("End");
+💥 Output:
+Start
+End
+Promise
+Timeout
+✅ Why?
+console.log("Start") & console.log("End") = sync → run immediately
+
+Promise → microtask queue → runs after sync, before setTimeout
+
+setTimeout → macrotask queue → runs after microtasks
+
+🚨 Remember:
+JavaScript is single-threaded
+
+The event loop enables async behavior without blocking
+
+Microtasks (Promises) are prioritized over macrotasks (setTimeout)
+
+🧠 TL;DR
+Term	Meaning
+Call Stack	Executes sync code line-by-line
+Web APIs	Handle async tasks in the browser
+Microtask Queue	For Promises, await, etc.
+Macrotask Queue	For setTimeout, setInterval
+Event Loop	Manages execution of tasks smoothly
+
