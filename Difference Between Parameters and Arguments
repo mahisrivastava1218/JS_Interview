@@ -1,0 +1,14 @@
+Parameters refer to the variables listed in a function's declaration, defining the input that the function can accept. Arguments, however, are the actual values 
+passed to the function when it is called, filling the parameters during execution.
+def add(x, y):  # Here, x and y are parameters
+    return x + y
+
+
+
+Arguments, also known as actual arguments, are the values supplied to a function when it is called. These values serve as inputs to the function during its execution.
+
+They are used to supply the values to the parameters of a function. The number of arguments must match the number of parameters in the function definition.
+
+Example:
+
+result = add(5, 3)  # Here, 5 and 3 are arguments
