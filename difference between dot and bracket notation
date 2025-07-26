@@ -1,3 +1,21 @@
+🔹 Dot Notation (.)
+Used when property name is known and is a valid identifier (no spaces/symbols).
+
+
+obj.name
+🔹 Bracket Notation ([])
+Used when property is dynamic or has spaces/symbols.
+
+obj[key] // dynamic key
+🔹 Arrays (Nested)
+Always use bracket notation with indexes:
+
+
+arr[0][1]
+✅ Tip:
+Use dot when simple, bracket when dynamic or special!
+
+
 function updateProperty(obj, propName, str) {
   // You only need to implement this function.
   obj[propName] = str;
@@ -26,6 +44,27 @@ function getAge(obj) {
   // here we known the value of age can use dot notation
 }
 
+//nested obj
+✅ Use dot notation when:
+You know the property name in advance.
+
+The property name is a valid identifier (no spaces, starts with a letter, etc.).
+
+
+const obj = { user: { name: "Mahi" } };
+console.log(obj.user.name); // ✅ Dot notation
+✅ Use bracket notation when:
+The key is dynamic (e.g., comes from a variable).
+
+The key has spaces, special characters, or starts with a number.
+
+You're working with arrays (index-based access).
+
+const obj = { "user name": "Mahi" };
+console.log(obj["user name"]); // ✅ Bracket notation
+
+const key = "name";
+console.log(obj[key]); // ✅ Dynamic key access
 function getFirstItem() {
   const shoppingCart = {1: "Apple", 2: "Orange"};
   return shoppingCart[1];
