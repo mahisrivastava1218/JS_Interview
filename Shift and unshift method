@@ -1,0 +1,3 @@
+
+The shift method removes the first element ("red"), and the unshift method adds a new element ("yellow") at the beginning of the array. 
+This leaves the array with three elements: ["yellow", "green", "blue"].
