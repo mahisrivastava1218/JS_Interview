@@ -1,0 +1,39 @@
+🔁 forEach()
+Purpose: Executes a function for each element in the array.
+
+Return Value: ❌ Does not return a new array (returns undefined).
+
+Use Case: When you just want to perform side effects (like logging, updating a database, etc.).
+
+✅ Example:
+const numbers = [1, 2, 3];
+numbers.forEach(num => {
+  console.log(num * 2); // Logs: 2, 4, 6
+});
+➡️ No new array is created. It just performs an action.
+
+🔁 map()
+Purpose: Executes a function for each element and returns a new array with the transformed values.
+
+Return Value: ✅ Returns a new array.
+
+Use Case: When you want to transform each item in an array and get a new array.
+
+✅ Example:
+
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+➡️ A new array is returned with modified values.
+
+🔍 Summary Table:
+Feature	forEach()	map()
+Returns new array?	❌ No	✅ Yes
+Used for	Side effects (log, update)	Transforming values
+Modifies original?	❌ No	❌ No
+Can be chained?	❌ Not chainable	✅ Can be chained (e.g. with filter)
+
+✅ When to Use What?
+Use forEach() → when you're doing something but not interested in returning a new array.
+
+Use map() → when you need a transformed version of the array.
