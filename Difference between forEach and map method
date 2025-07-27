@@ -1,5 +1,6 @@
 🔁 forEach()
 Purpose: Executes a function for each element in the array.
+return undefined value like 2,4,8 wheras map return new array
 
 Return Value: ❌ Does not return a new array (returns undefined).
 
