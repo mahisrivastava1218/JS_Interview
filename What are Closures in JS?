@@ -1,0 +1,26 @@
+ What is a Closure?
+A closure is created when a function remembers variables from its outer scope, even after that outer function has finished executing.
+
+🧠 Example:
+function outer() {
+  let name = "Mahi";
+
+  function inner() {
+    console.log(name); // 🔥 accesses outer variable
+  }
+
+  return inner;
+}
+
+const greet = outer();
+greet(); // 👉 Outputs: Mahi
+Here, inner() is a closure.
+Even though outer() is done, inner() still remembers name.
+
+📌 Why are Closures useful?
+✅ Data privacy (e.g., private variables)
+✅ Function factories
+✅ Maintaining state in async callbacks
+
+A closure is when a function remembers variables from its lexical scope even after the outer function has returned.
+
