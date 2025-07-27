@@ -1,0 +1,7 @@
+Use the .find() method to find the first element in the array and if there is no such element that satisfies the given condition it returns undefined by default.
+
+module.exports = firstEven
+function firstEven(arr){
+          return arr.find((val)=> val%2 === 0)
+}
+console.log(firstEven([1,2,3,4]));
