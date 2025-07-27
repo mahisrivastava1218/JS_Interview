@@ -1,0 +1,14 @@
+Lexical scope means that a function can access variables from the place where it was defined, not from where it is called.
+
+🧠 JavaScript uses lexical (static) scoping, so inner functions can access outer function variables.
+
+📌 Example:
+function outer() {
+  let name = "Mahi";
+  function inner() {
+    console.log(name); // ✅ Access allowed
+  }
+  inner();
+}
+outer();
+inner() can access name because it's defined inside outer() — this is lexical scope.
