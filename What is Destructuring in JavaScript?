@@ -1,0 +1,22 @@
+Destructuring is a short, clean way to extract values from objects or arrays and assign them to variables.
+
+✅ 1. Object Destructuring
+Extract values from an object:
+const user = { name: "Men", age: 25 };
+
+// Destructuring
+const { name, age } = user;
+
+console.log(name); // "Mahi"
+console.log(age);  // 25
+🔸 It matches keys from the object and assigns their values to variables.
+
+✅ 2. Array Destructuring
+Extract values from an array by position:
+const arr = [10, 20, 30];
+
+// Destructuring
+const [a, b] = arr;
+
+console.log(a); // 10
+console.log(b); // 20
