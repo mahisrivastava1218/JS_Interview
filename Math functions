@@ -1,0 +1,8 @@
+`Math.trunc()` removes the decimal part of the number,
+`Math.round()` rounds the number to the nearest integer,
+and `Math.floor()` returns the largest integer less than or equal
+to a given number. 
+
+ex->Math.trunc(-1.8) return -1;
+Math.round(2.5) return 3;
+Math.floor(3.9) return 3;
