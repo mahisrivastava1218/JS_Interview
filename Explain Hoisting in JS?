@@ -1,0 +1,41 @@
+
+✅ What is Hoisting in JavaScript?
+Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope (before code execution).
+
+🔍 What gets hoisted?
+Type	Declaration Hoisted?	Initialization Hoisted?
+var	✅ Yes	❌ No
+let / const	✅ Yes (in TDZ)	❌ No
+function	✅ Yes (fully)	✅ Yes
+arrow function	❌ No (if assigned to var/let/const)	❌ No
+
+🧠 Example 1 – var hoisting:
+console.log(x); // undefined
+var x = 5;
+➡ JS internally interprets as:
+var x;
+console.log(x); // undefined
+x = 5;
+🧠 Example 2 – let and const (Temporal Dead Zone):
+console.log(a); // ❌ ReferenceError
+let a = 10;
+let and const are hoisted, but not initialized. Accessing them before declaration gives a ReferenceError.
+
+🧠 Example 3 – Function Declaration:
+greet(); // ✅ Works
+function greet() {
+  console.log("Hello!");
+}
+✅ Function declarations are fully hoisted.
+
+🧠 Example 4 – Function Expression (not hoisted):
+greet(); // ❌ TypeError
+var greet = function() {
+  console.log("Hi");
+};
+Only the var greet part is hoisted, not the function definition.
+
+🧾 In short:
+Hoisting is when variable and function declarations are moved to the top of their scope before code execution.
+var is hoisted as undefined, let/const go into Temporal Dead Zone, and function declarations are fully hoisted.
+
