@@ -43,9 +43,6 @@ const marks = [80, 45, 90, 33, 70];
 const passed = marks.filter(mark => mark >= 50);
 console.log(passed); // [80, 90, 70]
 3. setTimeout()
-js
-Copy
-Edit
 setTimeout(() => {
   console.log("This runs after 1 second");
 }, 1000);
