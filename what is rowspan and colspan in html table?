@@ -1,0 +1,7 @@
+In HTML tables, rowspan is used to merge cells vertically (across rows), and colspan is used to merge cells horizontally (across columns).
+
+Example:
+<td rowspan="2" colspan="3">Merged</td> — This cell spans 2 rows and 3 columns.
+
+In JavaScript, we can access them using:
+element.rowSpan and element.colSpan.
