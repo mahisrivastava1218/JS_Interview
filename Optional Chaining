@@ -1,0 +1,26 @@
+Optional chaining (?.) is a safe way to access deeply nested properties of an object without causing a runtime error if any intermediate property is null or undefined.
+
+✅ Syntax:
+obj?.prop
+obj?.[expr]
+obj?.method?.()
+✅ Example:
+const user = {
+  name: "Mahi",
+  address: {
+    city: "Delhi",
+  },
+};
+
+console.log(user.address.city);        // ✅ "Delhi"
+console.log(user.address?.city);       // ✅ "Delhi"
+console.log(user.profile?.email);      // ✅ undefined (no error)
+Without optional chaining, this would throw:
+
+javascript
+console.log(user.profile.email); // ❌ Error: Cannot read property 'email' of undefined
+
+✅ Use Case in Arrays:
+const arr = [10, 20, 30];
+console.log(arr?.[2]);  // ✅ 30
+console.log(arr?.[5]);  // ✅ undefined
