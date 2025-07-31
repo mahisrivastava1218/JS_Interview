@@ -1,0 +1,23 @@
+Pure Functions: This function always returns the same output as given the same input parameters. Pure functions only depend on their input parameters and don't
+affect the state of the application or other parts of the code.
+
+function geek(value) {
+    return value+100;
+}
+
+console.log(geek(34)); 
+console.log(geek(4));  
+console.log(geek(12));
+
+Impure Functions: Impure functions are functions that can modify the state of the application or have side effects. In other words,
+impure functions can have unpredictable behavior and do affect other parts of the application. same input but it gives different output
+
+let flag = 0;
+function incrementflag() {
+    flag++;
+}
+incrementflag();
+console.log(flag); 
+
+incrementflag();
+console.log(flag);
