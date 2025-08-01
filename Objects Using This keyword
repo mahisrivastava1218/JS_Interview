@@ -1,0 +1,13 @@
+The this keyword refers to the current object in which it is used. However, incorrect usage of the this keyword in JavaScript can sometimes lead to errors.
+
+function methodUsingThisKeyword(name, age, city) {
+  // Debug the error in the below given code. Start by uncommenting the below lines of code.
+  let person = {
+    name: name,
+    age: age,
+    city: city,
+    getCity: function () { return this.name + " lives in " + this.city + "."}
+   };
+  //  console.log(person.getCity())
+  return person;
+}          
