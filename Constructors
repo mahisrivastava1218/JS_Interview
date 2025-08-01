@@ -1,0 +1,12 @@
+class Student{
+  constructor(name,age,occupation){
+    this.name = name;
+    this.age = age;
+    this.occupation = occupation;
+  }
+}
+
+function constructorArgument(name, age, occupation) {
+  // You only need to implement this function and also create a constructor.
+   return new Student(name,age,occupation);
+}
