@@ -1,0 +1,13 @@
+"Map" and "Set" refer to distinct data structures used for storing collections of data. map.
+A Map is a collection of key-value pairs, where each key is unique. It is similar to an object, but with key differences: 
+Key Types: Keys in a Map can be of any data type (e.g., objects, functions, numbers, strings), whereas object keys are typically strings or symbols.
+Order of Insertion: Map objects maintain the order of key-value pair insertion.
+Size Property: Map objects have a size property that directly indicates the number of key-value pairs.
+set.
+A Set is a collection of unique values. It is similar to an array, but with the crucial distinction that it only stores distinct values, automatically preventing duplicates.
+Uniqueness: Set objects only allow unique values; if you try to add a duplicate value, it will be ignored.
+Order of Insertion: Set objects also maintain the order of value insertion.
+Size Property: Like Map, Set objects have a size property indicating the number of unique values.
+In essence:
+Map: is for associating values with unique keys.
+Set: is for storing unique values in a collection.
