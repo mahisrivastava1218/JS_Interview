@@ -1,0 +1,13 @@
+
+function reduceMethodExtractData(watchList) {
+  // You only need to implement this function.
+  let count=0;
+ let val= watchList.reduce((sum,item)=>{
+    if(item.Director === "Christopher Nolan"){
+      count++;
+      return sum+parseFloat(item.imdbRating);
+    }
+    return sum;
+  },0)/count;
+  return val ? val : 0;
+}
