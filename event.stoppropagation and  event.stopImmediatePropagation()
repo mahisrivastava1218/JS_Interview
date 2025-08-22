@@ -1,0 +1,73 @@
+Event Bubbling (default behavior)
+
+When you click an element inside another element, the event bubbles up from the target element to its ancestors.
+
+For example:
+
+<div id="parent" style="background: lightblue; padding: 20px;">
+  Parent Div
+  <button id="child">Click Me</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent Clicked!");
+});
+
+document.getElementById("child").addEventListener("click", () => {
+  console.log("Child Clicked!");
+});
+</script>
+
+
+📌 If you click the button:
+
+Child Clicked!
+Parent Clicked!
+
+
+👉 Because the click event bubbles up to the parent.
+
+🔹 Using event.stopPropagation()
+
+If you don’t want the event to bubble up, call stopPropagation() inside the child’s event handler.
+
+document.getElementById("child").addEventListener("click", (event) => {
+  event.stopPropagation();  // 🚫 stop bubbling
+  console.log("Child Clicked (no parent trigger)!");
+});
+
+
+📌 Now, if you click the button:
+
+Child Clicked (no parent trigger)!
+
+
+👉 The parent’s event handler won’t run.
+
+🔹 When to Use
+
+When you have nested elements with event listeners, but only want the inner element’s event to fire.
+
+Useful in modals, dropdowns, accordions, and forms where clicking inside shouldn’t close the outer container.
+
+🔹 Related Method
+
+event.stopImmediatePropagation() → stops bubbling and prevents other listeners on the same element from running.
+
+Example:
+
+button.addEventListener("click", e => {
+  e.stopImmediatePropagation();
+  console.log("First listener runs");
+});
+
+button.addEventListener("click", () => {
+  console.log("Second listener will NOT run");
+});
+
+
+✅ In short:
+
+stopPropagation() = stop event from bubbling to parents.
+stopImmediatePropagation() = stop bubbling + stop other listeners on the same element.
