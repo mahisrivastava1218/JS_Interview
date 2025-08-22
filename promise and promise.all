@@ -1,0 +1,133 @@
+🔹 What is a Promise?
+
+A Promise in JavaScript represents a value that will be available in the future (like an API response, file read, or DB query).
+It has 3 states:
+
+Pending – initial state, neither fulfilled nor rejected
+
+Fulfilled (resolved) – operation completed successfully
+
+Rejected – operation failed
+🔹 Example: Creating a Promise
+let myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("✅ Operation Successful!");
+  } else {
+    reject("❌ Operation Failed!");
+  }
+});
+
+myPromise
+  .then(result => console.log(result))   // Runs if resolved
+  .catch(error => console.error(error))  // Runs if rejected
+  .finally(() => console.log("Promise finished"));
+
+🔹 Using async/await with Promise
+async function runPromise() {
+  try {
+    let result = await myPromise;  // wait for resolution
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
+runPromise();
+
+🔹 What is Promise.all?
+
+Promise.all() takes an array of promises and runs them in parallel.
+
+It returns a new promise that:
+
+✅ Resolves when all promises are resolved (returns an array of results).
+
+❌ Rejects if any one promise fails.
+
+🔹 Example: Promise.all
+let p1 = new Promise(resolve => setTimeout(() => resolve("First Done"), 1000));
+let p2 = new Promise(resolve => setTimeout(() => resolve("Second Done"), 2000));
+let p3 = new Promise(resolve => setTimeout(() => resolve("Third Done"), 1500));
+
+Promise.all([p1, p2, p3])
+  .then(results => console.log("Results:", results))
+  .catch(error => console.error("Error:", error));
+
+
+📌 Output after ~2s:
+
+Results: ["First Done", "Second Done", "Third Done"]
+
+🔹 If one fails in Promise.all
+let p1 = Promise.resolve("✅ Success 1");
+let p2 = Promise.reject("❌ Failed 2");
+let p3 = Promise.resolve("✅ Success 3");
+
+Promise.all([p1, p2, p3])
+  .then(results => console.log("Results:", results))
+  .catch(error => console.error("Error:", error));
+
+
+📌 Output:
+
+Error: ❌ Failed 2
+
+
+👉 Even though p1 and p3 succeeded, the whole Promise.all fails because p2 rejected.
+
+🔹 Summary
+
+Promise = handle async operations (success/fail).
+
+Promise.all = wait for multiple promises in parallel.
+
+Resolves when all succeed
+
+Rejects if any fails
+here’s also Promise.allSettled, which waits for all promises whether they succeed or fail.
+
+🔹 What is Promise.allSettled?
+
+It takes an array of promises (just like Promise.all).
+
+But difference:
+
+✅ It waits for all promises to finish (whether resolved or rejected).
+
+Instead of failing on the first rejection, it gives a detailed result for each promise.
+
+🔹 Syntax
+Promise.allSettled([promise1, promise2, promise3])
+  .then(results => console.log(results));
+
+🔹 Example
+let p1 = Promise.resolve("✅ Success 1");
+let p2 = Promise.reject("❌ Failed 2");
+let p3 = Promise.resolve("✅ Success 3");
+
+Promise.allSettled([p1, p2, p3])
+  .then(results => {
+    console.log(results);
+  });
+
+
+📌 Output:
+
+[
+  { status: "fulfilled", value: "✅ Success 1" },
+  { status: "rejected", reason: "❌ Failed 2" },
+  { status: "fulfilled", value: "✅ Success 3" }
+]
+
+🔹 When to use Promise.allSettled?
+
+✅ When you need results of all promises, even if some fail.
+
+✅ Good for tasks like loading multiple API calls, where you still want partial results.
+
+🔹 Comparison
+Feature	 Promise.all 	Promise.allSettled
+Resolves when	All promises succeed	After all promises finish
+Rejects when	Any promise fails	Never (always resolves)
+Result	Array of values	Array of {status, value/reason}
