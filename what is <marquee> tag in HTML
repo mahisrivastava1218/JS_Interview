@@ -1,0 +1,38 @@
+<marquee> is an old HTML tag used to create scrolling text or images (like a news ticker).
+
+It moves content left to right, right to left, up, or down automatically.
+
+⚠️ It is deprecated (not recommended in modern HTML), but still works in most browsers.
+
+Instead of <marquee>, developers now use CSS animations.
+
+<marquee> is an old HTML tag used to create scrolling text or images (like a news ticker).
+
+It moves content left to right, right to left, up, or down automatically.
+
+⚠️ It is deprecated (not recommended in modern HTML), but still works in most browsers.
+
+Instead of <marquee>, developers now use CSS animations.
+
+🔹 Modern Alternative (Using CSS Animation)
+
+Since <marquee> is outdated, here’s the modern way:
+
+  <style>
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">🚀 This is a modern marquee effect using CSS animation 🚀</div>
+</body>
