@@ -1,0 +1,24 @@
+A built-in JavaScript function called setTimeout allows you to run a function or evaluate an expression after a predetermined millisecond delay. 
+It requires two parameters: the code or function to be evaluated and the delay before execution.
+Syntax:
+setTimeout(function, delay);
+function: This parameter specifies the function to be executed or the code to be evaluated after the delay.
+delay: This parameter specifies the time delay in milliseconds before the function is executed.
+ setTimeout(() => {
+                count++;
+                result.innerHTML = `Count: ${count}`;
+}, 1000);
+
+setInterval() method
+Another built-in JavaScript function that allows you to run a function or evaluate an expression repeatedly at certain time interval. It also takes same two parameters.
+
+Syntax:
+setInterval(function, interval);
+function: This parameter specifies the function to be executed or the code to be evaluated at each interval.
+interval: This parameter specifies the time interval in milliseconds between each execution of the function.
+
+setInterval(() => {
+            count++;
+            result.innerHTML = `Count: ${count}`;
+}, 1000);
+ 
