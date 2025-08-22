@@ -1,0 +1,65 @@
+🔹 What is an API?
+
+API (Application Programming Interface) allows your JavaScript code to communicate with external services (like weather, payment, maps, etc.) or your own backend server.
+
+🔹 Process of API in JavaScript
+
+Choose an API
+
+Public API (like OpenWeather, GitHub, etc.)
+
+Your own backend API (Node.js, Express, etc.)
+
+Make a request (using fetch, axios, or XMLHttpRequest).
+
+Define the endpoint (URL).
+
+Choose the HTTP method (GET, POST, PUT, DELETE).
+
+Handle the response
+
+API usually responds with JSON (JavaScript Object Notation).
+
+Convert it into a JavaScript object.
+
+Use the data in your application.
+
+Show it on UI (DOM update).
+
+Store it in state (React, Vue, etc.).
+
+// Example: Get user info from GitHub API
+fetch("https://api.github.com/users/octocat")
+  .then(response => response.json())  // Convert response to JSON
+  .then(data => {
+    console.log(data);   // Use the data
+    document.body.innerHTML = `<h2>${data.name}</h2>
+                               <p>Followers: ${data.followers}</p>`;
+  })
+  .catch(error => console.error("Error:", error));
+
+🔹 Example 2: Send Data (POST Request)
+// Example: Send a new post to JSONPlaceholder API
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    title: "My First Post",
+    body: "Hello world!",
+    userId: 1
+  })
+})
+  .then(response => response.json())
+  .then(data => console.log("Created:", data))
+
+In short:
+
+Call the API (fetch/axios)
+
+Wait for response (asynchronous, use .then() or async/await)
+
+Parse JSON
+
+Use/update UI
